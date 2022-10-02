@@ -1,0 +1,19 @@
+                                                                                                                                              
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  name: mongo-express-ingress
+spec:
+  rules:
+    -  host: 104-200-26-90-ip.linodeusercontent.com #the domain name that points to the nginx ingress controller
+       http:
+        paths:
+          -  path: "/"
+             pathType: Prefix
+             backend:
+                service:
+                  name: mongo-express-service #the service you want to access over the domain name
+                  port:
+                    number: 8081

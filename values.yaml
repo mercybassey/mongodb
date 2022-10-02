@@ -1,0 +1,6 @@
+architecture: replicaset 
+replicaCount: 3
+persistence: 
+  storageClass: "linode-block-storage" #your cloud kubernetes cluster provisioner storage class goes here
+auth:
+  rootPassword: secret-root-pwsd
